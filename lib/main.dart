@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './signup.dart';
 
 void main() => runApp(First());
 
@@ -16,7 +17,7 @@ class Second extends StatelessWidget {
         backgroundColor: Colors.white,
         body: ListView(
           padding: EdgeInsets.all(30),
-          children: [
+          children: <Widget>[
           SizedBox(
             height: 80,
           ),
@@ -84,11 +85,16 @@ class Second extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text('still without account?',style: TextStyle(color:Colors.blue),),
-                          Container(
-                            decoration:BoxDecoration(
-                              border: Border(bottom:BorderSide(width: 4,color: Colors.blue))
+                          InkWell(
+                            onTap: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignupScreen()));
+                            },
+                                                      child: Container(
+                              decoration:BoxDecoration(
+                                border: Border(bottom:BorderSide(width: 4,color: Colors.blue))
+                              ),
+                              child: Text("Sign Up")
                             ),
-                            child: Text("Sign Up")
                           )
                         ]
                       ),
